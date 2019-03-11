@@ -22,9 +22,9 @@ GPIO pins programming - how to make code for the python code
     - https://www.lynda.com/Scratch-tutorials/Raspberry-Pi-GPIO-Depth/473324-2.html
     
 --------------------------------------------------------------
-BARCODES
+##BARCODES
 ---------------------------------------------------------------
-Reading a Barcode
+###Reading a Barcode
     Python module
     - https://pypi.org/project/zbar/
     important info for barcode reading and scanning
@@ -33,7 +33,7 @@ Reading a Barcode
     - http://zbar.sourceforge.net/download.html
     - 
 ----------------------------------------------------------------
- Creating a Barcode
+ ###Creating a Barcode
     Python module 
     -  https://pypi.org/project/python-barcode/
     GIT for creating barcodes using python and making svg objects 
@@ -41,7 +41,7 @@ Reading a Barcode
     Example code for generating code - but this done randomly not by choice
       - https://www.101computing.net/barcode-generator-using-python/
 ---------------------------------------------------------------
-PWM
+##PWM
 ---------------------------------------------------------------
-In order to make a pwm with python code
+###In order to make a pwm with python code
     - https://pythonhosted.org/RPIO/pwm_py.html 
