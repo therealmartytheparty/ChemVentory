@@ -3,9 +3,11 @@ A program that will be put into a system made for chemical laboratories to organ
 --------------------------------------------------------------
 How to use Github
 - https://guides.github.com/activities/hello-world/
-
+How to make a great Readme for a git
+- https://gist.github.com/PurpleBooth/109311bb0361f32d87a2
+- https://gist.githubusercontent.com/PurpleBooth/109311bb0361f32d87a2/raw/8254b53ab8dcb18afc64287aaddd9e5b6059f880/README-Template.md
 --------------------------------------------------------------
-LEDS control
+## LEDS control
 --------------------------------------------------------------
 LED programming/Shift Register
   Info
@@ -13,7 +15,7 @@ LED programming/Shift Register
       - https://github.com/bradytheinventor/led-cube 
       
 -------------------------------------------------------------
-GPIO pins
+## GPIO pins
 --------------------------------------------------------------
 GPIO pins programming - how to make code for the python code
   Lynda Tutorial
