@@ -10,7 +10,7 @@ How to make a great Readme for a git
 --------------------------------------------------------------
 ## LEDS control
 --------------------------------------------------------------
-LED programming/Shift Register
+### LED programming/Shift Register
   Info
     Instructible for 3d led block that goes into talking about shift registers
       - https://github.com/bradytheinventor/led-cube 
@@ -42,7 +42,7 @@ GPIO pins programming - how to make code for the python code
     Example code for generating code - but this done randomly not by choice
       - https://www.101computing.net/barcode-generator-using-python/
 ---------------------------------------------------------------
-##P WM
+## PWM
 ---------------------------------------------------------------
 ### In order to make a pwm with python code
     - https://pythonhosted.org/RPIO/pwm_py.html 
