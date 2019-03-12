@@ -1,10 +1,10 @@
 # ChemVentory - 
 A program that will be put into a system made for chemical laboratories to organize and store chemicals. 
 --------------------------------------------------------------
-How to use Github
+### How to use Github
 - https://guides.github.com/activities/hello-world/
 
-How to make a great Readme for a git
+### How to make a great Readme for a git
 - https://gist.github.com/PurpleBooth/109311bb0361f32d87a2
 - https://gist.githubusercontent.com/PurpleBooth/109311bb0361f32d87a2/raw/8254b53ab8dcb18afc64287aaddd9e5b6059f880/README-Template.md
 --------------------------------------------------------------
@@ -18,7 +18,7 @@ How to make a great Readme for a git
 -------------------------------------------------------------
 ## GPIO pins
 --------------------------------------------------------------
-GPIO pins programming - how to make code for the python code
+### GPIO pins programming - how to make code for the python code
   Lynda Tutorial
     - https://www.lynda.com/Scratch-tutorials/Raspberry-Pi-GPIO-Depth/473324-2.html
     
@@ -46,3 +46,10 @@ GPIO pins programming - how to make code for the python code
 ---------------------------------------------------------------
 ### In order to make a pwm with python code
     - https://pythonhosted.org/RPIO/pwm_py.html 
+
+------------------------------------------------------------
+## Modules
+------------------------------------------------------------
+### Processing module
+    - example code for processing module
+    - http://interactivepython.org/runestone/static/everyday/2013/05/1_processing.html
