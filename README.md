@@ -17,6 +17,10 @@ A program that will be put into a system made for chemical laboratories to organ
       - https://github.com/bradytheinventor/led-cube 
 ###  CharliePlexing
         - https://aglick.com/charliecube.html
+###  Using the SN74HC595
+        Goes into the python code for driving the SN74HC595 chip
+        -https://www.sunfounder.com/learn/super_kit_v2_for_raspberrypi/lesson-10-driving-leds-by-74hc595-super-kit-for-raspberrypi.html 
+      
 -------------------------------------------------------------
 ## GPIO pins
 --------------------------------------------------------------
