@@ -15,7 +15,8 @@ A program that will be put into a system made for chemical laboratories to organ
   Info
     Instructible for 3d led block that goes into talking about shift registers
       - https://github.com/bradytheinventor/led-cube 
-      
+###  CharliePlexing
+        - https://aglick.com/charliecube.html
 -------------------------------------------------------------
 ## GPIO pins
 --------------------------------------------------------------
