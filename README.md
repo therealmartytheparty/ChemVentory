@@ -27,7 +27,7 @@ A program that will be put into a system made for chemical laboratories to organ
 ---------------------------------------------------------------
 ### Reading a Barcode
     Python module
-    - https://pypi.org/project/zbar/
+    - https://pypi.org/project/zbar/ 
     important info for barcode reading and scanning
     - https://www.learnopencv.com/barcode-and-qr-code-scanner-using-zbar-and-opencv/
     other stuff
@@ -36,16 +36,16 @@ A program that will be put into a system made for chemical laboratories to organ
 ----------------------------------------------------------------
  ### Creating a Barcode
     Python module 
-    -  https://pypi.org/project/python-barcode/
+    -  https://pypi.org/project/python-barcode/ 
     GIT for creating barcodes using python and making svg objects 
-    - https://github.com/WhyNotHugo/python-barcode
+    - https://github.com/WhyNotHugo/python-barcode 
     Example code for generating code - but this done randomly not by choice
-      - https://www.101computing.net/barcode-generator-using-python/
+      - https://www.101computing.net/barcode-generator-using-python/ 
 ---------------------------------------------------------------
 ## PWM
 ---------------------------------------------------------------
 ### In order to make a pwm with python code
-    - https://pythonhosted.org/RPIO/pwm_py.html 
+    - https://pythonhosted.org/RPIO/pwm_py.html  
 
 ------------------------------------------------------------
 ## Modules
