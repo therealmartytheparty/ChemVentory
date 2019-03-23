@@ -2,6 +2,7 @@
 A program that will be put into a system made for chemical laboratories to organize and store chemicals. 
 --------------------------------------------------------------
 ### How to use Github
+- https://git-scm.com/book/en/v1/Git-Basics-Recording-Changes-to-the-Repository
 - https://guides.github.com/activities/hello-world/
 
 ### How to make a great Readme for a git
