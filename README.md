@@ -1,6 +1,8 @@
 # ChemVentory - 
 A program that will be put into a system made for chemical laboratories to organize and store chemicals. 
 --------------------------------------------------------------
+### Github cheat sheet
+- https://github.github.com/training-kit/downloads/github-git-cheat-sheet.pdf 
 ### How to use Github
 - https://git-scm.com/book/en/v1/Git-Basics-Recording-Changes-to-the-Repository
 - https://guides.github.com/activities/hello-world/
