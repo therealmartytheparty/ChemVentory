@@ -6,6 +6,8 @@ A program that will be put into a system made for chemical laboratories to organ
 ### How to use Github
 - https://git-scm.com/book/en/v1/Git-Basics-Recording-Changes-to-the-Repository
 - https://guides.github.com/activities/hello-world/
+### Recording Changes to Repository
+  -https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository 
 
 ### How to make a great Readme for a git
 - https://gist.github.com/PurpleBooth/109311bb0361f32d87a2
