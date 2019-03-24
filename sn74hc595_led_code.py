@@ -30,11 +30,19 @@ LED3 = [0x02,0x03,0x0b,0x0f,0x2f,0x3f,0xbf,0xff]	#blink mode 3
 #=================================================
 
 def print_msg():
-	print 'Program is running...'
-	print 'Please press Ctrl+C to end the program...'
-
+	print "Program is running..."
+	print "Please press Ctrl+C to end the program..."
+	
+#setups up all used pins to output and sets them to low
 def setup():
-	GPIO.setmode(GPIO.BOARD)    # Number GPIOs by its physical location
+	
+	#Could use this code instead the BCM version
+	#GPIO.setmode(GPIO.BOARD)
+	#BOARD setmode have the pins abide by the physical pin location
+	#BCM setmode abides by the green boxes and their GPIO reference
+	#it might be better to use Board because the PI B versions have a different config between them
+	#but the 
+	GPIO.setmode(GPIO.BCM)    # Number GPIOs by its physical location
 	GPIO.setup(SDI, GPIO.OUT)
 	GPIO.setup(RCLK, GPIO.OUT)
 	GPIO.setup(SRCLK, GPIO.OUT)
