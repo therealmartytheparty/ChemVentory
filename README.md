@@ -1,5 +1,5 @@
 # ===========>>ChemVentory<<=============
-A program that will be put into a system made for chemical laboratories to organize and store chemicals. 
+Programming research and things that will be implemented in the final code
 --------------------------------------------------------------
 ## How To Use Github
 ### Github cheat sheet
