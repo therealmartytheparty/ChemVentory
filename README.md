@@ -14,7 +14,7 @@ Programming research and things that will be implemented in the final code
 
 *for adding a certain file
 
-- git add <chosenfile>
+- git add <insertfile>
   
 *for commiting all code that has been added to the staging area
 
