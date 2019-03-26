@@ -4,7 +4,7 @@ Programming research and things that will be implemented in the final code
 ## How To Use Github
 ---------------------------------------------------------------
 ### commands that are mostly going to be used
-*for cloning this directory
+*for cloning this directory     
 - git clone https://github.com/therealmartytheparty/ChemVentory
 *for adding everything into the staging area
 - git add .   
