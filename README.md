@@ -12,7 +12,7 @@ Programming research and things that will be implemented in the final code
 
 - git add .   
 
-*for adding a certain file
+*for adding a certain file into the staging area
 
 - git add "insertfile"
   
