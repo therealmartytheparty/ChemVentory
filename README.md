@@ -1,11 +1,40 @@
-# ChemVentory - 
-A program that will be put into a system made for chemical laboratories to organize and store chemicals. 
+# ===========>>ChemVentory<<=============
+Programming research and things that will be implemented in the final code
 --------------------------------------------------------------
+## How To Use Github
+---------------------------------------------------------------
+### commands that are mostly going to be used
+*for cloning this directory
+
+- git clone https://github.com/therealmartytheparty/ChemVentory
+
+*for adding everything into the staging area
+
+- git add .   
+
+*for adding a certain file into the staging area
+
+- git add "insertfile"
+  
+*for commiting all code that has been added to the staging area
+
+- git commit -a
+
+*for commiting code along with adding a message related to the commit ( dont need but could be helpful)
+
+- git commit -am "message"
+--------------------------------------------------------------
+URLS
+  
 ### Github cheat sheet
 - https://github.github.com/training-kit/downloads/github-git-cheat-sheet.pdf 
-### How to use Github
+### help for Github
 - https://git-scm.com/book/en/v1/Git-Basics-Recording-Changes-to-the-Repository
 - https://guides.github.com/activities/hello-world/
+### Recording Changes to Repository
+  -https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository 
+### Using Github in the repository 
+  -https://dont-be-afraid-to-commit.readthedocs.io/en/latest/git/commandlinegit.html 
 
 ### How to make a great Readme for a git
 - https://gist.github.com/PurpleBooth/109311bb0361f32d87a2
