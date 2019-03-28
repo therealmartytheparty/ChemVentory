@@ -54,6 +54,9 @@ def hc595_in(dat):
 	for bit in range(0, 8):	
 		GPIO.output(SDI, 0x80 & (dat << bit))
 		GPIO.output(SRCLK, GPIO.HIGH)
+		#it says on the datasheet that under 4.5 volts the frequency is supposed to be around 25MHz
+		# if you convert 25 MHz to seconds then it should be 4 *10^-8
+		#formula for time(period) = 1/ Frequency
 		time.sleep(0.001)
 		GPIO.output(SRCLK, GPIO.LOW)
 
