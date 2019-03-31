@@ -92,15 +92,17 @@ class Ui_MainWindow(object):
         self.pushButton.setMinimumSize(QtCore.QSize(150, 50))
         self.pushButton.setIconSize(QtCore.QSize(20, 20))
         self.pushButton.setObjectName("pushButton")
-        self.pushButton.clicked.connect(lambda:self.whichbtn(self.pushButton))
+        self.pushButton.clicked.connect(lambda:self.search(self.pushButton))
         self.horizontalLayout.addWidget(self.pushButton)
         self.pushButton_3 = QtWidgets.QPushButton(self.frame)
         self.pushButton_3.setMinimumSize(QtCore.QSize(150, 50))
         self.pushButton_3.setObjectName("pushButton_3")
+        self.pushButton_3.clicked.connect(lambda:self.checkin(self.pushButton_3))
         self.horizontalLayout.addWidget(self.pushButton_3)
         self.pushButton_2 = QtWidgets.QPushButton(self.frame)
         self.pushButton_2.setMinimumSize(QtCore.QSize(150, 50))
         self.pushButton_2.setObjectName("pushButton_2")
+        self.pushButton_2.clicked.connect(lambda:self.checkout(self.pushButton_2))
         self.horizontalLayout.addWidget(self.pushButton_2)
         self.verticalLayout.addLayout(self.horizontalLayout)
         self.horizontalLayout_3 = QtWidgets.QHBoxLayout()
@@ -108,10 +110,12 @@ class Ui_MainWindow(object):
         self.pushButton_5 = QtWidgets.QPushButton(self.frame)
         self.pushButton_5.setMinimumSize(QtCore.QSize(0, 50))
         self.pushButton_5.setObjectName("pushButton_5")
+        self.pushButton_5.clicked.connect(lambda:self.outputfile(self.pushButton_5))
         self.horizontalLayout_3.addWidget(self.pushButton_5)
         self.pushButton_6 = QtWidgets.QPushButton(self.frame)
         self.pushButton_6.setMinimumSize(QtCore.QSize(234, 50))
         self.pushButton_6.setObjectName("pushButton_6")
+        self.pushButton_6.clicked.connect(lambda:self.newentry(self.pushButton_6))
         self.horizontalLayout_3.addWidget(self.pushButton_6)
         self.verticalLayout.addLayout(self.horizontalLayout_3)
         self.gridLayout_3 = QtWidgets.QGridLayout()
@@ -126,14 +130,17 @@ class Ui_MainWindow(object):
         self.pushButton_9 = QtWidgets.QPushButton(self.frame)
         self.pushButton_9.setMinimumSize(QtCore.QSize(0, 50))
         self.pushButton_9.setObjectName("pushButton_9")
+        self.pushButton_9.clicked.connect(lambda:self.saveentry(self.pushButton_9))
         self.horizontalLayout_5.addWidget(self.pushButton_9)
         self.pushButton_8 = QtWidgets.QPushButton(self.frame)
         self.pushButton_8.setMinimumSize(QtCore.QSize(0, 50))
         self.pushButton_8.setObjectName("pushButton_8")
+        self.pushButton_8.clicked.connect(lambda:self.delentry(self.pushButton_8))
         self.horizontalLayout_5.addWidget(self.pushButton_8)
         self.pushButton_7 = QtWidgets.QPushButton(self.frame)
         self.pushButton_7.setMinimumSize(QtCore.QSize(0, 50))
         self.pushButton_7.setObjectName("pushButton_7")
+        self.pushButton_7.clicked.connect(lambda:self.editentry(self.pushButton_7))
         self.horizontalLayout_5.addWidget(self.pushButton_7)
         self.verticalLayout.addLayout(self.horizontalLayout_5)
         self.horizontalLayout_4.addLayout(self.verticalLayout)
@@ -148,10 +155,7 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(_translate("MainWindow", "Chemventory MainWindow"))
         __sortingEnabled = self.listWidget.isSortingEnabled()
         self.listWidget.setSortingEnabled(False)
-        item = self.listWidget.item(0)
-        item.setText(_translate("MainWindow", "Base"))
-        item = self.listWidget.item(1)
-        item.setText(_translate("MainWindow", "HCL"))
+        self.listloader(MainWindow)
         self.listWidget.setSortingEnabled(__sortingEnabled)
         self.pushButton.setText(_translate("MainWindow", "Search"))
         self.pushButton_3.setText(_translate("MainWindow", "Check out"))
@@ -161,17 +165,34 @@ class Ui_MainWindow(object):
         self.pushButton_9.setText(_translate("MainWindow", "Save Entry"))
         self.pushButton_8.setText(_translate("MainWindow", "Delete Entry"))
         self.pushButton_7.setText(_translate("MainWindow", "Edit Entry"))
+        
+    def listloader(self, MainWindow):
+        _translate = QtCore.QCoreApplication.translate
+        item = self.listWidget.item(0)
+        item.setText(_translate("MainWindow", "Base"))
+        item = self.listWidget.item(1)
+        item.setText(_translate("MainWindow", "HCL"))
 
-    def whichbtn(self,b):
+    def search(self,b):
         print ("clicked button is "+b.text())
 
+    def checkin(self,b):
+        print ("clicked button is "+b.text())
 
+    def checkout(self,b):
+        print ("clicked button is "+b.text())
 
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    MainWindow = QtWidgets.QMainWindow()
-    ui = Ui_MainWindow()
-    ui.setupUi(MainWindow)
-    MainWindow.show()
-    sys.exit(app.exec_())
+    def outputfile(self,b):
+        print ("clicked button is "+b.text())
+
+    def newentry(self,b):
+        print ("clicked button is "+b.text())
+
+    def saveentry(self,b):
+        print ("clicked button is "+b.text())
+
+    def delentry(self,b):
+        print ("clicked button is "+b.text())
+
+    def editentry(self,b):
+        print ("clicked button is "+b.text())
