@@ -1,32 +1,30 @@
-def node(self, prevnode=None, nextnode=None):
-    self.prev = prevnode
-    self.curr = self
-    self.next = nextnode
-
 class node:
 
-    def __init__(self,chemical):
-        chemical = chemical
+    def __init__(self, obj, prevnode=None, nextnode=None):
+        self.prev = prevnode
+        self.chem = obj
+        self.next = nextnode
 
-def displaylist(head):
-    currnode = head
+class list:
 
-    while currnode is not None:
-        # we can then get this to display on the GUI
-        print(currnode.name)
-        currnode = currnode.next
+    head = None
+    tail = None
 
-def addnode(chem)
-    temp = chem
-    if #something in list
-        while chem is not None
+    def add(self, obj):
+        newnode = node(obj)
 
-    else:
-        chem.node(None,None)
+        if self.head is None:
+            self.head = self.tail = newnode
+        else:
+            newnode.prev = self.tail
+            newnode.next = None
+            self.tail.next = newnode
+            self.tail = newnode
 
-chem_1.node(None,chem_2)
-chem_2.node(chem_2,chem_3)
-chem_3.node(chem_3,chem_4)
-chem_4.node(chem_4,chem_5)
-chem_5.node(chem_5,chem_6)
-chem_6.node(chem_6)
+    def print(self):
+        temp = self.head
+
+        while temp is not None:
+            print(temp.chem.name)
+
+            temp = temp.next

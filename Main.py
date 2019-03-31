@@ -1,4 +1,5 @@
-import list_class,chemical_class
+from list_class import *
+from chemical_class import *
 
 if __name__ == "__main__":
 
@@ -8,6 +9,16 @@ if __name__ == "__main__":
     chem_4 = Chemical('Chemical 4', 'CF4', 'Company4', 300, 200, 400)
     chem_5 = Chemical('Chemical 5', 'CF5', 'Company5', 200, 100, 500)
     chem_6 = Chemical('Chemical 6', 'CF6', 'Company6', 100, 50, 600)
+
+    d = list()
+    d.add(chem_1)
+    d.add(chem_2)
+    d.add(chem_3)
+    d.add(chem_4)
+    d.add(chem_5)
+    d.add(chem_6)
+
+    d.print()
 
 
 
