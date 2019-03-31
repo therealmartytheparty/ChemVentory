@@ -214,9 +214,6 @@ if __name__ == "__main__":
     list.add(chem_5)
     list.add(chem_6)
 
-    list.print()
-
-
     chem_1.file_out()
     chem_2.file_out()
     chem_3.file_out()
