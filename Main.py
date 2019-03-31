@@ -1,6 +1,6 @@
 from list_class import *
 from chemical_class import *
-from GUI.thebiggu import *
+from GUI.GUI_class import *
 
 
 
