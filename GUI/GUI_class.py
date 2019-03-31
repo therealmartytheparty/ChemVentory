@@ -71,6 +71,7 @@ class Ui_MainWindow(object):
         self.listWidget.setUniformItemSizes(True)
         self.listWidget.setItemAlignment(QtCore.Qt.AlignLeading)
         self.listWidget.setObjectName("listWidget")
+
         item = QtWidgets.QListWidgetItem()
         self.listWidget.addItem(item)
         item = QtWidgets.QListWidgetItem()
@@ -165,34 +166,36 @@ class Ui_MainWindow(object):
         self.pushButton_9.setText(_translate("MainWindow", "Save Entry"))
         self.pushButton_8.setText(_translate("MainWindow", "Delete Entry"))
         self.pushButton_7.setText(_translate("MainWindow", "Edit Entry"))
-        
+
     def listloader(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        item = self.listWidget.item(0)
-        item.setText(_translate("MainWindow", "Base"))
-        item = self.listWidget.item(1)
-        item.setText(_translate("MainWindow", "HCL"))
 
-    def search(self,b):
-        print ("clicked button is "+b.text())
+        for i in range(0,10):
+            item = self.listWidget.item(i)
+            item.setText(_translate("MainWindow", "Base"))
+            item = self.listWidget.item(i)
+            item.setText(_translate("MainWindow", "HCL"))
 
-    def checkin(self,b):
-        print ("clicked button is "+b.text())
+    def search(self,butt):
+        print ("clicked button is "+butt.text())
 
-    def checkout(self,b):
-        print ("clicked button is "+b.text())
+    def checkin(self,butt):
+        print ("clicked button is "+butt.text())
 
-    def outputfile(self,b):
-        print ("clicked button is "+b.text())
+    def checkout(self,butt):
+        print ("clicked button is "+butt.text())
 
-    def newentry(self,b):
-        print ("clicked button is "+b.text())
+    def outputfile(self,butt):
+        print ("clicked button is "+butt.text())
 
-    def saveentry(self,b):
-        print ("clicked button is "+b.text())
+    def newentry(self,butt):
+        print ("clicked button is "+butt.text())
 
-    def delentry(self,b):
-        print ("clicked button is "+b.text())
+    def saveentry(self,butt):
+        print ("clicked button is "+butt.text())
 
-    def editentry(self,b):
-        print ("clicked button is "+b.text())
+    def delentry(self,butt):
+        print ("clicked button is "+butt.text())
+
+    def editentry(self,butt):
+        print ("clicked button is "+butt.text())
