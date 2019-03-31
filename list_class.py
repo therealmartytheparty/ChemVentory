@@ -54,6 +54,24 @@ class list:
 
         while temp is not None:
             if temp.chem.name == value:
-                print(temp.chem.name + ' was found')
+                print(temp.chem.name + 'was found')
 
             temp = temp.next
+
+    def sort(self):
+        temp = self.head
+
+        counter = 0
+
+        while temp.next is not None:
+            temp = temp.next
+
+            counter += 0
+
+        while i < counter:
+            temp1 = head
+            temp2 = head.next
+
+            while temp1.next is not None:
+                chem1 = temp1.name
+                chem2 = temp2.name

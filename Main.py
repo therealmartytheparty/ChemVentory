@@ -149,10 +149,7 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(_translate("MainWindow", "Chemventory MainWindow"))
         __sortingEnabled = self.listWidget.isSortingEnabled()
         self.listWidget.setSortingEnabled(False)
-        item = self.listWidget.item(0)
-        item.setText(_translate("MainWindow", "Base"))
-        item = self.listWidget.item(1)
-        item.setText(_translate("MainWindow", "HCL"))
+        self.listloader(MainWindow)
         self.listWidget.setSortingEnabled(__sortingEnabled)
         self.pushButton.setText(_translate("MainWindow", "Search"))
         self.pushButton_3.setText(_translate("MainWindow", "Check out"))
@@ -162,6 +159,13 @@ class Ui_MainWindow(object):
         self.pushButton_9.setText(_translate("MainWindow", "Save Entry"))
         self.pushButton_8.setText(_translate("MainWindow", "Delete Entry"))
         self.pushButton_7.setText(_translate("MainWindow", "Edit Entry"))
+
+    def listloader(self, MainWindow):
+        _translate = QtCore.QCoreApplication.translate
+        item = self.listWidget.item(0)
+        item.setText(_translate("MainWindow", "Base"))
+        item = self.listWidget.item(1)
+        item.setText(_translate("MainWindow", "HCL"))
 
     def search(self,b):
         print ("clicked button is "+b.text())
@@ -202,18 +206,23 @@ if __name__ == "__main__":
     chem_5 = Chemical('Chemical 5', 'CF5', 'Company5', 200, 100, 500)
     chem_6 = Chemical('Chemical 6', 'CF6', 'Company6', 100, 50, 600)
 
-    d = list()
-    d.add(chem_1)
-    d.add(chem_2)
-    d.add(chem_3)
-    d.add(chem_4)
-    d.add(chem_5)
-    d.add(chem_6)
+    list = list()
+    list.add(chem_1)
+    list.add(chem_2)
+    list.add(chem_3)
+    list.add(chem_4)
+    list.add(chem_5)
+    list.add(chem_6)
 
-    d.print()
+    list.print()
 
 
     chem_1.file_out()
     chem_2.file_out()
+    chem_3.file_out()
+    chem_4.file_out()
+    chem_5.file_out()
+    chem_6.file_out()
+
 
     sys.exit(app.exec_())

@@ -30,15 +30,18 @@ class Chemical:
         })
         with open(temp, 'w') as outfile:
             json.dump(data, outfile)
+        outfile.close()
 
-
-'''
     def file_in(self):
-        with open('data.txt') as json_file:
-            data2 = json.load(json_file)
-            for p in data2['people']:
-                print('barC: ' + p['name'])
-                print('Website: ' + p['website'])
-                print('From: ' + p['from'])
-                print('')
-'''
+        temp_in = str(self.barC) + '.txt'
+        with open(temp_in) as json_file:
+            data = json.load(json_file)
+            for p in data['chem']:
+                self.barC = p['barC']
+                self.name = p['name']
+                self.formula = p['formula']
+                self.supplier = p['supplier']
+                self.massI = p['massI']
+                self.massUpdate = p['massUpdate']
+                self.age = p['age']
+        outfile.close()
