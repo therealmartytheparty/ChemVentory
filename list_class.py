@@ -28,3 +28,32 @@ class list:
             print(temp.chem.name)
 
             temp = temp.next
+
+    def remove(self, value):
+        temp = self.head
+
+        while temp is not None:
+            if temp.chem.name == value:
+                # item is in the middle
+                if (temp.prev is not None) and (temp.next is not None):
+                    temp.prev.next = temp.next
+                    temp.next.prev = temp.prev
+                # item is head
+                elif temp.prev is None:
+                    self.head = temp.next
+                    temp.next.prev = None
+                # item is tail
+                else:
+                    self.tail = temp.prev
+                    temp.prev.next = None
+
+            temp = temp.next
+
+    def search(self, value):
+        temp = self.head
+
+        while temp is not None:
+            if temp.chem.name == value:
+                print(temp.chem.name + ' was found')
+
+            temp = temp.next

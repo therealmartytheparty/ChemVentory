@@ -1,5 +1,11 @@
-from list_class import *
-from chemical_class import *
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file 'final chem gui.ui'
+#
+# Created by: PyQt5 UI code generator 5.12.1
+#
+# WARNING! All changes made in this file will be lost!
+
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
@@ -86,17 +92,15 @@ class Ui_MainWindow(object):
         self.pushButton.setMinimumSize(QtCore.QSize(150, 50))
         self.pushButton.setIconSize(QtCore.QSize(20, 20))
         self.pushButton.setObjectName("pushButton")
-        self.pushButton.clicked.connect(lambda:self.search(self.pushButton))
+        self.pushButton.clicked.connect(lambda:self.whichbtn(self.pushButton))
         self.horizontalLayout.addWidget(self.pushButton)
         self.pushButton_3 = QtWidgets.QPushButton(self.frame)
         self.pushButton_3.setMinimumSize(QtCore.QSize(150, 50))
         self.pushButton_3.setObjectName("pushButton_3")
-        self.pushButton_3.clicked.connect(lambda:self.checkin(self.pushButton_3))
         self.horizontalLayout.addWidget(self.pushButton_3)
         self.pushButton_2 = QtWidgets.QPushButton(self.frame)
         self.pushButton_2.setMinimumSize(QtCore.QSize(150, 50))
         self.pushButton_2.setObjectName("pushButton_2")
-        self.pushButton_2.clicked.connect(lambda:self.checkout(self.pushButton_2))
         self.horizontalLayout.addWidget(self.pushButton_2)
         self.verticalLayout.addLayout(self.horizontalLayout)
         self.horizontalLayout_3 = QtWidgets.QHBoxLayout()
@@ -104,12 +108,10 @@ class Ui_MainWindow(object):
         self.pushButton_5 = QtWidgets.QPushButton(self.frame)
         self.pushButton_5.setMinimumSize(QtCore.QSize(0, 50))
         self.pushButton_5.setObjectName("pushButton_5")
-        self.pushButton_5.clicked.connect(lambda:self.outputfile(self.pushButton_5))
         self.horizontalLayout_3.addWidget(self.pushButton_5)
         self.pushButton_6 = QtWidgets.QPushButton(self.frame)
         self.pushButton_6.setMinimumSize(QtCore.QSize(234, 50))
         self.pushButton_6.setObjectName("pushButton_6")
-        self.pushButton_6.clicked.connect(lambda:self.newentry(self.pushButton_6))
         self.horizontalLayout_3.addWidget(self.pushButton_6)
         self.verticalLayout.addLayout(self.horizontalLayout_3)
         self.gridLayout_3 = QtWidgets.QGridLayout()
@@ -124,17 +126,14 @@ class Ui_MainWindow(object):
         self.pushButton_9 = QtWidgets.QPushButton(self.frame)
         self.pushButton_9.setMinimumSize(QtCore.QSize(0, 50))
         self.pushButton_9.setObjectName("pushButton_9")
-        self.pushButton_9.clicked.connect(lambda:self.saveentry(self.pushButton_9))
         self.horizontalLayout_5.addWidget(self.pushButton_9)
         self.pushButton_8 = QtWidgets.QPushButton(self.frame)
         self.pushButton_8.setMinimumSize(QtCore.QSize(0, 50))
         self.pushButton_8.setObjectName("pushButton_8")
-        self.pushButton_8.clicked.connect(lambda:self.delentry(self.pushButton_8))
         self.horizontalLayout_5.addWidget(self.pushButton_8)
         self.pushButton_7 = QtWidgets.QPushButton(self.frame)
         self.pushButton_7.setMinimumSize(QtCore.QSize(0, 50))
         self.pushButton_7.setObjectName("pushButton_7")
-        self.pushButton_7.clicked.connect(lambda:self.editentry(self.pushButton_7))
         self.horizontalLayout_5.addWidget(self.pushButton_7)
         self.verticalLayout.addLayout(self.horizontalLayout_5)
         self.horizontalLayout_4.addLayout(self.verticalLayout)
@@ -163,29 +162,10 @@ class Ui_MainWindow(object):
         self.pushButton_8.setText(_translate("MainWindow", "Delete Entry"))
         self.pushButton_7.setText(_translate("MainWindow", "Edit Entry"))
 
-    def search(self,b):
+    def whichbtn(self,b):
         print ("clicked button is "+b.text())
 
-    def checkin(self,b):
-        print ("clicked button is "+b.text())
 
-    def checkout(self,b):
-        print ("clicked button is "+b.text())
-
-    def outputfile(self,b):
-        print ("clicked button is "+b.text())
-
-    def newentry(self,b):
-        print ("clicked button is "+b.text())
-
-    def saveentry(self,b):
-        print ("clicked button is "+b.text())
-
-    def delentry(self,b):
-        print ("clicked button is "+b.text())
-
-    def editentry(self,b):
-        print ("clicked button is "+b.text())
 
 if __name__ == "__main__":
     import sys
@@ -194,26 +174,4 @@ if __name__ == "__main__":
     ui = Ui_MainWindow()
     ui.setupUi(MainWindow)
     MainWindow.show()
-
-    chem_1 = Chemical('Chemical 1', 'CF1', 'Company1', 600, 500, 100)
-    chem_2 = Chemical('Chemical 2', 'CF2', 'Company2', 500, 400, 200)
-    chem_3 = Chemical('Chemical 3', 'CF3', 'Company3', 400, 300, 300)
-    chem_4 = Chemical('Chemical 4', 'CF4', 'Company4', 300, 200, 400)
-    chem_5 = Chemical('Chemical 5', 'CF5', 'Company5', 200, 100, 500)
-    chem_6 = Chemical('Chemical 6', 'CF6', 'Company6', 100, 50, 600)
-
-    d = list()
-    d.add(chem_1)
-    d.add(chem_2)
-    d.add(chem_3)
-    d.add(chem_4)
-    d.add(chem_5)
-    d.add(chem_6)
-
-    d.print()
-
-
-    chem_1.file_out()
-    chem_2.file_out()
-
     sys.exit(app.exec_())
