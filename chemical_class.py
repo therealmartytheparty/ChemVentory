@@ -8,7 +8,7 @@ class Chemical:
         self.barC = Chemical.num_of_Chems + 1
         self.name = name
         self.formula = formula
-        self.supplier =supplier
+        self.supplier = supplier
         self.massI = massI
         self.massUpdate = massUpdate
         self.age = age
@@ -16,7 +16,7 @@ class Chemical:
         Chemical.num_of_Chems += 1
 
     def file_out(self):
-        temp = self.name + '.txt'
+        temp = str(self.barC) + '.txt'
         data = {}
         data['chem'] = []
         data['chem'].append({
@@ -30,24 +30,26 @@ class Chemical:
         })
         with open(temp, 'w') as outfile:
             json.dump(data, outfile)
+        outfile.close()
+
+    def file_in(self):
+        temp_in = str(self.barC) + '.txt'
+        with open(temp_in) as json_file:
+            data = json.load(json_file)
+            for p in data['chem']:
+                self.barC = p['barC']
+                self.name = p['name']
+                self.formula = p['formula']
+                self.supplier = p['supplier']
+                self.massI = p['massI']
+                self.massUpdate = p['massUpdate']
+                self.age = p['age']
+        outfile.close()
 
     def node(self, prevnode=None, nextnode=None):
         self.prev = prevnode
         self.curr = self
         self.next = nextnode
-
-
-
-'''
-    def file_in(self):
-        with open('data.txt') as json_file:
-            data2 = json.load(json_file)
-            for p in data2['people']:
-                print('barC: ' + p['name'])
-                print('Website: ' + p['website'])
-                print('From: ' + p['from'])
-                print('')
-'''
 
 def displaylist(head):
     currnode = head
@@ -57,13 +59,7 @@ def displaylist(head):
         print(currnode.name)
         currnode = currnode.next
 
-def addnode(chem)
-    temp = chem
-    if #nothing in list
-        while chem is not None
 
-    else:
-        chem.node(None,None)
 
 chem_1 = Chemical('Chemical 1', 'CF1', 'Company1', 600, 500, 100)
 chem_2 = Chemical('Chemical 2', 'CF2', 'Company2', 500, 400, 200)
@@ -79,10 +75,7 @@ chem_4.node(chem_4,chem_5)
 chem_5.node(chem_5,chem_6)
 chem_6.node(chem_6)
 
-
-
-
-
-
 chem_1.file_out()
 chem_2.file_out()
+
+displaylist(chem_1)
