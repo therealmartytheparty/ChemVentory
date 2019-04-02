@@ -1,16 +1,16 @@
 from list_class import *
 from chemical_class import *
-from GUI.GUI_class import *
-
+from GUI.finalgu import *
+import sys
+from PyQt5 import QtGui, uic
 
 
 if __name__ == "__main__":
-    import sys
     app = QtWidgets.QApplication(sys.argv)
-    MainWindow = QtWidgets.QMainWindow()
+    MainWin = QtWidgets.QMainWindow()
     ui = Ui_MainWindow()
-    ui.setupUi(MainWindow)
-    MainWindow.show()
+    ui.setupUi(MainWin)
+    MainWin.show()
 
     chem_1 = Chemical('Chemical 1', 'CF1', 'Company1', 600, 500, 100)
     chem_2 = Chemical('Chemical 2', 'CF2', 'Company2', 500, 400, 200)
@@ -27,12 +27,13 @@ if __name__ == "__main__":
     list.add(chem_5)
     list.add(chem_6)
 
+    list.print()
+
     chem_1.file_out()
     chem_2.file_out()
     chem_3.file_out()
     chem_4.file_out()
     chem_5.file_out()
     chem_6.file_out()
-
 
     sys.exit(app.exec_())

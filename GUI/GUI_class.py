@@ -71,7 +71,6 @@ class Ui_MainWindow(object):
         self.listWidget.setUniformItemSizes(True)
         self.listWidget.setItemAlignment(QtCore.Qt.AlignLeading)
         self.listWidget.setObjectName("listWidget")
-
         item = QtWidgets.QListWidgetItem()
         self.listWidget.addItem(item)
         item = QtWidgets.QListWidgetItem()
@@ -170,11 +169,11 @@ class Ui_MainWindow(object):
     def listloader(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
 
-        for i in range(0,10):
-            item = self.listWidget.item(i)
-            item.setText(_translate("MainWindow", "Base"))
-            item = self.listWidget.item(i)
-            item.setText(_translate("MainWindow", "HCL"))
+
+        item = self.QtWidgets.QListWidget.item(0)
+        item.setText(_translate("MainWindow", "Base"))
+        item = self.QtWidgets.QListWidget.item(1)
+        item.setText(_translate("MainWindow", "HCL"))
 
     def search(self,butt):
         print ("clicked button is "+butt.text())
