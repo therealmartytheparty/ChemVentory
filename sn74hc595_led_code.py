@@ -13,9 +13,10 @@
 import RPi.GPIO as GPIO
 import time
 
-SDI   = 11
-RCLK  = 12
-SRCLK = 13
+SDI   = 4 
+RCLK  = 5
+SRCLK = 6 
+CLEAR = 13
 
 #===============   LED Mode Defne ================
 #	You can define yourself, in binay, and convert it to Hex 
@@ -23,15 +24,16 @@ SRCLK = 13
 #	like : 0101 0101, means LED1, 3, 5, 7 are on.(from left to right)
 #	and convert to 0x55.
 
-LED0 = [0x01,0x02,0x04,0x08,0x10,0x20,0x40,0x80]	#original mode
-LED1 = [0x01,0x03,0x07,0x0f,0x1f,0x3f,0x7f,0xff]	#blink mode 1
-LED2 = [0x01,0x05,0x15,0x55,0xb5,0xf5,0xfb,0xff]	#blink mode 2
-LED3 = [0x02,0x03,0x0b,0x0f,0x2f,0x3f,0xbf,0xff]	#blink mode 3
-#=================================================
+LEDi = [0,0,0,0,0,0,0,0]
+pos = 1
+posi = 0x0 + pos
+for index in range(0,7):
+        LEDi[index] = posi
+        
 
 def print_msg():
-	print "Program is running..."
-	print "Please press Ctrl+C to end the program..."
+	print ("Program is running...")
+	print ("Please press Ctrl+C to end the program...")
 	
 #setups up all used pins to output and sets them to low
 def setup():
@@ -43,6 +45,7 @@ def setup():
 	#it might be better to use Board because the PI B versions have a different config between them
 	#but the 
 	GPIO.setmode(GPIO.BCM)    # Number GPIOs by its physical location
+	GPIO.setwarnings(False)
 	GPIO.setup(SDI, GPIO.OUT)
 	GPIO.setup(RCLK, GPIO.OUT)
 	GPIO.setup(SRCLK, GPIO.OUT)
@@ -66,19 +69,18 @@ def hc595_out():
 	GPIO.output(RCLK, GPIO.LOW)
 
 def loop():
-	WhichLeds = LED0	# Change Mode, modes from LED0 to LED3
-	sleeptime = 0.1		# Change speed, lower value, faster speed
-	while True:
-		for i in range(0, len(WhichLeds)):
-			hc595_in(WhichLeds[i])
-			hc595_out()
-			time.sleep(sleeptime)
-		
-		for i in range(len(WhichLeds)-1, -1, -1):
-			hc595_in(WhichLeds[i])
-			hc595_out()
-			time.sleep(sleeptime)
-
+        WhichLeds = LEDi	# Change Mode, modes from LED0 to LED3
+        sleeptime = 0.1		# Change speed, lower value, faster speed
+        while True:
+                for i in range(0,len(WhichLeds)):
+                        hc595_in(WhichLeds[i])
+                        hc595_out()
+                        time.sleep(sleeptime)
+                for i in range(len(WhichLeds)-1, -1, -1):
+                        hc595_in(WhichLeds[i])
+                        hc595_out()
+                        time.sleep(sleeptime)
+                          
 def destroy():   # When program ending, the function is executed. 
 	GPIO.cleanup()
 
