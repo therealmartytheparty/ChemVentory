@@ -35,6 +35,8 @@ URLS
   -https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository 
 ### Using Github in the repository 
   -https://dont-be-afraid-to-commit.readthedocs.io/en/latest/git/commandlinegit.html 
+### Git for using Github
+  -https://github.com/joshnh/Git-Commands
 
 ### How to make a great Readme for a git
 - https://gist.github.com/PurpleBooth/109311bb0361f32d87a2
