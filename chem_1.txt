@@ -1,1 +1,0 @@
-{"chem": [{"name": "Chemical 1", "formula": "CF1", "supplier": "Company1", "massI": 600, "massUpdate": 500, "age": 100}, {"name": "Chemical 2", "formula": "CF2", "supplier": "Company1", "massI": 500, "massUpdate": 500, "age": 200}]}

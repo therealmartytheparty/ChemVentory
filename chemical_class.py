@@ -28,14 +28,30 @@ class Chemical:
             'massUpdate': self.massUpdate,
             'age': self.age
         })
-        with open(temp, 'w') as outfile:
+        with open("Chemicals/" + temp, 'w') as outfile:
+            strrr = str(self.barC) +"\n"
+            print(strrr)
+            outfile2 = open("Chemicals/Chembarc.txt",'a')
+            outfile2.write(strrr)
             json.dump(data, outfile)
         outfile.close()
+        outfile2.close()
 
 
     def file_in(self):
+        barcode = []
+        with open("Chemicals/Chembarc.txt",'r') as file:
+            line = file.readline()
+            cnt = 1
+            while line:
+                print("Line {}: {}".format(cnt,line.strip()))
+                line = file.readline()
+                cnt += 1
+        file.close()
+
+'''
         temp_in = str(self.barC) + '.txt'
-        with open(temp_in) as json_file:
+        with open("Chemicals/" + temp_in) as json_file:
             data = json.load(json_file)
             for p in data['chem']:
                 self.barC = p['barC']
@@ -45,4 +61,5 @@ class Chemical:
                 self.massI = p['massI']
                 self.massUpdate = p['massUpdate']
                 self.age = p['age']
-        outfile.close()
+        json_file.close()
+'''

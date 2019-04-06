@@ -11,6 +11,8 @@ if __name__ == "__main__":
     ui = Ui_MainWindow()
     ui.setupUi(MainWin)
     MainWin.show()
+    #additems
+
 
     chem_1 = Chemical('Chemical 1', 'CF1', 'Company1', 600, 500, 100)
     chem_2 = Chemical('Chemical 2', 'CF2', 'Company2', 500, 400, 200)
@@ -35,5 +37,7 @@ if __name__ == "__main__":
     chem_4.file_out()
     chem_5.file_out()
     chem_6.file_out()
+
+    chem_1.file_in()
 
     sys.exit(app.exec_())
