@@ -1,77 +1,71 @@
-class node:
+from chemical_class import *
 
-    def __init__(self, obj, prevnode=None, nextnode=None):
-        self.prev = prevnode
-        self.chem = obj
-        self.next = nextnode
+chem_1 = Chemical('Chemical 1', 'CF1', 'Company1', 600, 500, 100)
+chem_2 = Chemical('Chemical 2', 'CF2', 'Company2', 500, 400, 200)
+chem_3 = Chemical('Chemical 3', 'CF3', 'Company3', 400, 300, 300)
+chem_4 = Chemical('Chemical 4', 'CF4', 'Company4', 300, 200, 400)
+chem_5 = Chemical('Chemical 5', 'CF5', 'Company5', 200, 100, 500)
+chem_6 = Chemical('Chemical 6', 'CF6', 'Company6', 100, 50, 600)
+
+chemList = [chem_3, chem_2, chem_1, chem_4, chem_5, chem_6]
+
+chemListMax = 96
+
 
 class list:
 
-    head = None
-    tail = None
+    def addToList(self):
+        if len(chemList) < 96:
+            chemList.append(self)
+            #chemList.sortList(self)
+            print ('The chemical ' + self.name + ' was added!')
 
-    def add(self, obj):
-        newnode = node(obj)
+            for position in range(len(chemList)):     # by index
+                print(chemList[position].name)
 
-        if self.head is None:
-            self.head = self.tail = newnode
+            print('')
+
         else:
-            newnode.prev = self.tail
-            newnode.next = None
-            self.tail.next = newnode
-            self.tail = newnode
+            print ('The chemical list if full')
 
-    def print(self):
-        temp = self.head
 
-        while temp is not None:
-            print(temp.chem.name)
+    def removeFromList(self):
+        #print(self.name)
+        #print('')
+        for x in range(1, len(chemList)):
+            #print(x)
+            if self.name == chemList[x].name:
+                #print(chemList[x].name)
+                del chemList[x]
+                #chemList.remove(self)
+        for position in range(len(chemList)):     # by index
+            print(chemList[position].name)
 
-            temp = temp.next
 
-    def remove(self, value):
-        temp = self.head
+    def sortList():
+        #chemList.name.sort()
+        chemList.sort(key=lambda x: x.name)
 
-        while temp is not None:
-            if temp.chem.name == value:
-                # item is in the middle
-                if (temp.prev is not None) and (temp.next is not None):
-                    temp.prev.next = temp.next
-                    temp.next.prev = temp.prev
-                # item is head
-                elif temp.prev is None:
-                    self.head = temp.next
-                    temp.next.prev = None
-                # item is tail
-                else:
-                    self.tail = temp.prev
-                    temp.prev.next = None
+        for position in range(len(chemList)):     # by index
+            print(chemList[position].name)
 
-            temp = temp.next
 
-    def search(self, value):
-        temp = self.head
+    def searchList(self):
+        #print('Start searching')
+        for x in range(1, len(chemList)):
+            #print(x)
+            if self.name == chemList[x].name:
+                #print(chemList[x].name)
+                print(chemList[x].name)
+                #chemList.remove(self)
 
-        while temp is not None:
-            if temp.chem.name == value:
-                print(temp.chem.name + 'was found')
 
-            temp = temp.next
+    addToList(Chemical('Chemical 7', 'CF7', 'Company7', 600, 500, 100))
+    addToList(Chemical('Chemical 8', 'CF8', 'Company8', 600, 500, 100))
 
-    def sort(self):
-        temp = self.head
+    removeFromList(Chemical('Chemical 8', 'CF8', 'Company8', 600, 500, 100))
 
-        counter = 0
+    print('')
+    sortList()
 
-        while temp.next is not None:
-            temp = temp.next
-
-            counter += 0
-
-        while i < counter:
-            temp1 = head
-            temp2 = head.next
-
-            while temp1.next is not None:
-                chem1 = temp1.name
-                chem2 = temp2.name
+    searchList(Chemical('Chemical 6', 'CF6', 'Company6', 100, 50, 600))

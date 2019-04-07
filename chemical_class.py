@@ -1,4 +1,6 @@
 import json
+import datetime
+from datetime import timedelta
 
 class Chemical:
 
@@ -12,6 +14,9 @@ class Chemical:
         self.massI = massI
         self.massUpdate = massUpdate
         self.age = age
+        dateSystemEntry = datetime.datetime.now()
+        dateExpire = datetime.datetime.now() + timedelta(days = 365)
+        #chemLocation
 
         Chemical.num_of_Chems += 1
 
@@ -26,7 +31,10 @@ class Chemical:
             'supplier': self.supplier,
             'massI': self.massI,
             'massUpdate': self.massUpdate,
-            'age': self.age
+            'age': self.age,
+            'dateSystemEntry': self.dateSystemEntry,
+            'dateExpire': self.dateExpire,
+            'chemLocation': self.chemLocation
         })
         with open(temp, 'w') as outfile:
             json.dump(data, outfile)
@@ -45,4 +53,8 @@ class Chemical:
                 self.massI = p['massI']
                 self.massUpdate = p['massUpdate']
                 self.age = p['age']
+                slef.dateSystemEntry = p['dateSystemEntry']
+                self.dateExpire = p['dateExpire']
+                self.chemLocation = p['chemLocation']
+
         outfile.close()
