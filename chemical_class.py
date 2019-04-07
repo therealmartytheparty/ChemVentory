@@ -1,3 +1,8 @@
+
+import json
+import datetime
+from datetime import timedelta
+
 class Chemical:
 
     num_of_Chems = 0
@@ -31,6 +36,11 @@ class Chemical:
 
     def setmassUpdate(self,massUpdate):
         self.massUpdate = massUpdate
+        dateSystemEntry = datetime.datetime.now()
+        dateExpire = datetime.datetime.now() + timedelta(days = 365)
+        #chemLocation
+
 
     def setage(self,age):
         self.age = age
+
