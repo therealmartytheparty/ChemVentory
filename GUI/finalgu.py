@@ -10,7 +10,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 
 
 class Ui_MainWindow(object):
-    def setupUi(self, MainWindow):
+    def setupUi(self, MainWindow, list, size):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(840, 800)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
@@ -92,10 +92,6 @@ class Ui_MainWindow(object):
         self.listWidget.setUniformItemSizes(True)
         self.listWidget.setItemAlignment(QtCore.Qt.AlignLeading)
         self.listWidget.setObjectName("listWidget")
-        item = QtWidgets.QListWidgetItem()
-        self.listWidget.addItem(item)
-        item = QtWidgets.QListWidgetItem()
-        self.listWidget.addItem(item)
         self.verticalLayout_2.addWidget(self.listWidget)
         self.horizontalLayout_4.addWidget(self.frame_2)
         self.verticalLayout = QtWidgets.QVBoxLayout()
@@ -277,6 +273,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
+        self.additems(list, size)
         self.chemtabs.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
@@ -285,10 +282,6 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(_translate("MainWindow", "Chemventory MainWindow"))
         __sortingEnabled = self.listWidget.isSortingEnabled()
         self.listWidget.setSortingEnabled(False)
-        item = self.listWidget.item(0)
-        item.setText(_translate("MainWindow", "Base"))
-        item = self.listWidget.item(1)
-        item.setText(_translate("MainWindow", "HCL"))
         self.listWidget.setSortingEnabled(__sortingEnabled)
         self.pushButton.setText(_translate("MainWindow", "Search"))
         self.pushButton_3.setText(_translate("MainWindow", "Check out"))
@@ -313,3 +306,13 @@ class Ui_MainWindow(object):
         self.pushButton_11.setText(_translate("MainWindow", "Edit Entry"))
         self.pushButton_10.setText(_translate("MainWindow", "Save Entry"))
         self.chemtabs.setTabText(self.chemtabs.indexOf(self.EditChem), _translate("MainWindow", "Edit"))
+
+    def additems(self, list, size):
+        index = 0
+        namelist = []
+        for i in range(size):
+            namelist.append(list[i].name)
+
+        print(namelist)
+        item = QtWidgets.QListWidget()
+        item.addItems(namelist)

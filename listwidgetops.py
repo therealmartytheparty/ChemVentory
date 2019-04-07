@@ -1,12 +1,9 @@
 import json
 from chemical_class import *
 from list_class import *
-
-def additems(chem,window):
-    trans = QtCore.QCoreApplication.translate
+from GUI.finalgu import *
 
 def file_out(chem):
-
     # increments the chemical list size file
     barcodefile = open("Chemicals/Chembarc.txt",'w')
     barcodefile.write(chem.barC)
@@ -58,10 +55,12 @@ def listsizer():
     return listsize
 
 def listloader():
+    #find the size of the list
     size = listsizer()
     array = []
     index = 1
 
+    # iterate until youve reached the size of the file list
     while size > 0:
         array.append(file_in(index))
 

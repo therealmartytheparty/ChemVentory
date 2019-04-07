@@ -10,10 +10,12 @@ if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
     MainWin = QtWidgets.QMainWindow()
     ui = Ui_MainWindow()
-    ui.setupUi(MainWin)
-    MainWin.show()
 
     list = listloader()
+    size = len(list)
+
+    ui.setupUi(MainWin, list, size)
+    MainWin.show()
 
     print(list[0].name)
     print(list[0].barC)
