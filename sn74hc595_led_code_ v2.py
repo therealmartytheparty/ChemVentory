@@ -28,15 +28,16 @@ LED1 = [0x01,0x03,0x07,0x0f,0x1f,0x3f,0x7f,0xff]	#blink mode 1
 LED2 = [0x01,0x05,0x15,0x55,0xb5,0xf5,0xfb,0xff]	#blink mode 2
 LED3 = [0x02,0x03,0x0b,0x0f,0x2f,0x3f,0xbf,0xff]	#blink mode 3
 LED4 = [0x02,0x02,0x02,0x02,0x02,0x02,0x02,0x02]
-LED5 = 0x02
+LED5 = 0x05
 #=================================================
 
 def print_msg():
-	print 'Program is running...'
-	print 'Please press Ctrl+C to end the program...'
+	print ("Program is running...")
+	print ("Please press Ctrl+C to end the program...")
 
 def setup():
-	GPIO.setmode(GPIO.BOARD)    # Number GPIOs by its physical location
+	GPIO.setmode(GPIO.BCM)    # Number GPIOs by its physical location
+	GPIO.setwarnings(False)
 	GPIO.setup(SDI, GPIO.OUT)
 	GPIO.setup(RCLK, GPIO.OUT)
 	GPIO.setup(SRCLK, GPIO.OUT)
@@ -60,24 +61,23 @@ def hc595_out():
 	GPIO.output(RCLK, GPIO.LOW)
 
 def loop():
-	WhichLeds = LED5	# Change Mode, modes from LED0 to LED3
+	WhichLeds = LED4	# Change Mode, modes from LED0 to LED3
 	sleeptime = 0.1		# Change speed, lower value, faster speed
 	while True:
-		hc595_in(WhichLed)
+                '''
+		hc595_in(WhichLeds)
 		hc595_out()
 		time.sleep(sleeptime)
 		'''
-		for i in range(0, len(WhichLeds)):
-			
-			hc595_in(WhichLeds[i])
-			hc595_out()
-			time.sleep(sleeptime)
-		
+                for i in range(0, len(WhichLeds[i])):
+                        hc595_in(WhichLeds[i])
+                        hc595_out()
+                        time.sleep(sleeptime)
 		for i in range(len(WhichLeds)-1, -1, -1):
 			hc595_in(WhichLeds[i])
 			hc595_out()
 			time.sleep(sleeptime)
-'''
+
 def destroy():   # When program ending, the function is executed. 
 	GPIO.cleanup()
 
