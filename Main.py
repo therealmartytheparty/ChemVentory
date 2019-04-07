@@ -14,10 +14,9 @@ if __name__ == "__main__":
     list = listloader()
     size = len(list)
 
-    ui.setupUi(MainWin, list, size)
+    ui.setupUi(MainWin, size, list)
     MainWin.show()
 
-    print(list[0].name)
-    print(list[0].barC)
+
 
     sys.exit(app.exec_())

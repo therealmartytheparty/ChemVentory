@@ -225,11 +225,26 @@
                 <property name="tabletTracking">
                  <bool>true</bool>
                 </property>
+                <property name="contextMenuPolicy">
+                 <enum>Qt::ActionsContextMenu</enum>
+                </property>
+                <property name="acceptDrops">
+                 <bool>true</bool>
+                </property>
+                <property name="layoutDirection">
+                 <enum>Qt::LeftToRight</enum>
+                </property>
+                <property name="verticalScrollBarPolicy">
+                 <enum>Qt::ScrollBarAlwaysOn</enum>
+                </property>
                 <property name="iconSize">
                  <size>
                   <width>0</width>
                   <height>0</height>
                  </size>
+                </property>
+                <property name="movement">
+                 <enum>QListView::Free</enum>
                 </property>
                 <property name="gridSize">
                  <size>
@@ -246,6 +261,12 @@
                 <property name="itemAlignment">
                  <set>Qt::AlignLeading</set>
                 </property>
+                <property name="currentRow">
+                 <number>-1</number>
+                </property>
+                <property name="sortingEnabled">
+                 <bool>true</bool>
+                </property>
                 <item>
                  <property name="text">
                   <string>Base</string>
@@ -253,7 +274,27 @@
                 </item>
                 <item>
                  <property name="text">
+                  <string>eqwoi</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>ewoi</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>ewoi</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
                   <string>HCL</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>wdoiu</string>
                  </property>
                 </item>
                </widget>

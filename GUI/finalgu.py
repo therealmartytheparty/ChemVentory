@@ -10,7 +10,8 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 
 
 class Ui_MainWindow(object):
-    def setupUi(self, MainWindow, list, size):
+
+    def setupUi(self, MainWindow, size, list):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(840, 800)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
@@ -86,8 +87,13 @@ class Ui_MainWindow(object):
         self.listWidget.setMaximumSize(QtCore.QSize(150, 800))
         self.listWidget.setMouseTracking(True)
         self.listWidget.setTabletTracking(True)
-        self.listWidget.setIconSize(QtCore.QSize(0, 0))
-        self.listWidget.setGridSize(QtCore.QSize(0, 0))
+        self.listWidget.setContextMenuPolicy(QtCore.Qt.ActionsContextMenu)
+        self.listWidget.setAcceptDrops(True)
+        self.listWidget.setLayoutDirection(QtCore.Qt.LeftToRight)
+        self.listWidget.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOn)
+        self.listWidget.setIconSize(QtCore.QSize(10, 10))
+        self.listWidget.setMovement(QtWidgets.QListView.Free)
+        self.listWidget.setGridSize(QtCore.QSize(10, 20))
         self.listWidget.setModelColumn(0)
         self.listWidget.setUniformItemSizes(True)
         self.listWidget.setItemAlignment(QtCore.Qt.AlignLeading)
@@ -273,13 +279,15 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
-        self.additems(list, size)
+        self.appendlist(size, list)
         self.chemtabs.setCurrentIndex(0)
+        self.listWidget.setCurrentRow(0)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Chemventory MainWindow"))
+        self.listWidget.setSortingEnabled(True)
         __sortingEnabled = self.listWidget.isSortingEnabled()
         self.listWidget.setSortingEnabled(False)
         self.listWidget.setSortingEnabled(__sortingEnabled)
@@ -288,7 +296,7 @@ class Ui_MainWindow(object):
         self.pushButton_2.setText(_translate("MainWindow", "Check In"))
         self.pushButton_5.setText(_translate("MainWindow", "Create Output File"))
         self.pushButton_8.setText(_translate("MainWindow", "Delete Entry"))
-        self.chemtabs.setTabText(self.chemtabs.indexOf(self.Main), _translate("MainWindow", "Main"))
+        self.chemtabs.setTabText(self.chemtabs.indexOf(self.Main), _translate("MainWindow", "Tab 1"))
         self.label.setText(_translate("MainWindow", "Name of Chemical:"))
         self.label_2.setText(_translate("MainWindow", "Mass in grams:"))
         self.label_3.setText(_translate("MainWindow", "Date Received:"))
@@ -300,19 +308,18 @@ class Ui_MainWindow(object):
         self.label_5.setText(_translate("MainWindow", "Chemical Formula:"))
         self.label_6.setText(_translate("MainWindow", "Supplier:"))
         self.pushButton_4.setText(_translate("MainWindow", "Save"))
-        self.chemtabs.setTabText(self.chemtabs.indexOf(self.Addnewchem), _translate("MainWindow", "Add New"))
+        self.chemtabs.setTabText(self.chemtabs.indexOf(self.Addnewchem), _translate("MainWindow", "Tab 2"))
         self.label_7.setText(_translate("MainWindow", "Chemical:"))
         self.pushButton_6.setText(_translate("MainWindow", "Search"))
         self.pushButton_11.setText(_translate("MainWindow", "Edit Entry"))
         self.pushButton_10.setText(_translate("MainWindow", "Save Entry"))
-        self.chemtabs.setTabText(self.chemtabs.indexOf(self.EditChem), _translate("MainWindow", "Edit"))
+        self.chemtabs.setTabText(self.chemtabs.indexOf(self.EditChem), _translate("MainWindow", "Page"))
 
-    def additems(self, list, size):
-        index = 0
-        namelist = []
+    def appendlist(self, size, list):
+
         for i in range(size):
-            namelist.append(list[i].name)
-
-        print(namelist)
-        item = QtWidgets.QListWidget()
-        item.addItems(namelist)
+            item = QtWidgets.QListWidgetItem()
+            self.listWidget.setCurrentRow(i)
+            self.listWidget.addItem(list[i].name)
+            item = self.listWidget.item(i)
+            item.setText(list[i].name)
