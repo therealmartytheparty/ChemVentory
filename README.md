@@ -92,3 +92,9 @@ URLS
 ### Processing module
     - example code for processing module
     - http://interactivepython.org/runestone/static/everyday/2013/05/1_processing.html
+    
+------------------------------------------------
+## Sending Emails
+---------------------------------------------------
+### This website has the code tha actually works
+  - https://realpython.com/python-send-email/
