@@ -23,6 +23,10 @@ Programming research and things that will be implemented in the final code
 *for commiting code along with adding a message related to the commit ( dont need but could be helpful)
 
 - git commit -am "message"
+
+*for pulling all the changed code in a branch ( in this case it is the master branch)
+
+- git pull origin master
 --------------------------------------------------------------
 URLS
   
