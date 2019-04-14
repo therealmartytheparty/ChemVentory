@@ -1,9 +1,10 @@
-# ===========>>ChemVentory<<=============
+# ChemVentory
 Programming research and code that was used to create the code 
 for ChemVentory Chemical Storage System
---------------------------------------------------------------
-## How To Use Github
----------------------------------------------------------------
+
+
+# How To Use Github
+
 ## Github Commands
 Cloning a directory into a new folder->  git clone https://github.com/therealmartytheparty/ChemVentory
 
@@ -16,7 +17,7 @@ Commiting all code that has been added to the staging area -> git commit -a
 Commiting code along with adding a message related to the commit ( dont need but could be helpful) -> git commit -am "message"
 
 Pulling all the changed code in a branch ( in this case it is the master branch) -> git pull origin master
---------------------------------------------------------------
+
   
 ### Github cheat sheet
 - https://github.github.com/training-kit/downloads/github-git-cheat-sheet.pdf 
@@ -33,10 +34,11 @@ Pulling all the changed code in a branch ( in this case it is the master branch)
 ### How to make a great Readme for a git
 - https://gist.github.com/PurpleBooth/109311bb0361f32d87a2
 - https://gist.githubusercontent.com/PurpleBooth/109311bb0361f32d87a2/raw/8254b53ab8dcb18afc64287aaddd9e5b6059f880/README-Template.md
+
+
+# LEDS control
 --------------------------------------------------------------
-## LEDS control
---------------------------------------------------------------
-### LED programming/Shift Register
+## LED programming/Shift Register
   Info
     Instructible for 3d led block that goes into talking about shift registers
       - https://github.com/bradytheinventor/led-cube 
