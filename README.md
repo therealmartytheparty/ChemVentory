@@ -1,5 +1,6 @@
 # ===========>>ChemVentory<<=============
-Programming research and things that will be implemented in the final code
+Programming research and code that was used to create the code 
+for ChemVentory Chemical Storage System
 --------------------------------------------------------------
 ## How To Use Github
 ---------------------------------------------------------------
