@@ -60,8 +60,7 @@ Pulling all the changed code in a branch ( in this case it is the master branch)
     important info for barcode reading and scanning
     - https://www.learnopencv.com/barcode-and-qr-code-scanner-using-zbar-and-opencv/
     other stuff
-    - http://zbar.sourceforge.net/download.html
-    - 
+    - http://zbar.sourceforge.net/download.html 
 
  ### Creating a Barcode
     Python module 
