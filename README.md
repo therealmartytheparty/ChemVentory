@@ -3,9 +3,9 @@ Programming research and code that was used to create the code
 for ChemVentory Chemical Storage System
 
 
-# How To Use Github
+## How To Use Github
 
-## Github Commands
+### Github Commands
 Cloning a directory into a new folder->  git clone https://github.com/therealmartytheparty/ChemVentory
 
 Adding everything into the staging are -> git add .   
@@ -36,9 +36,8 @@ Pulling all the changed code in a branch ( in this case it is the master branch)
 - https://gist.githubusercontent.com/PurpleBooth/109311bb0361f32d87a2/raw/8254b53ab8dcb18afc64287aaddd9e5b6059f880/README-Template.md
 
 
-# LEDS control
---------------------------------------------------------------
-## LED programming/Shift Register
+## LEDS control
+### LED programming/Shift Register
   Info
     Instructible for 3d led block that goes into talking about shift registers
       - https://github.com/bradytheinventor/led-cube 
@@ -48,16 +47,13 @@ Pulling all the changed code in a branch ( in this case it is the master branch)
         Goes into the python code for driving the SN74HC595 chip
         -https://www.sunfounder.com/learn/super_kit_v2_for_raspberrypi/lesson-10-driving-leds-by-74hc595-super-kit-for-raspberrypi.html 
       
--------------------------------------------------------------
 ## GPIO pins
---------------------------------------------------------------
 ### GPIO pins programming - how to make code for the python code
   Lynda Tutorial
     - https://www.lynda.com/Scratch-tutorials/Raspberry-Pi-GPIO-Depth/473324-2.html
     
---------------------------------------------------------------
+
 ## BARCODES
----------------------------------------------------------------
 ### Reading a Barcode
     Python module
     - https://pypi.org/project/zbar/ 
@@ -66,7 +62,7 @@ Pulling all the changed code in a branch ( in this case it is the master branch)
     other stuff
     - http://zbar.sourceforge.net/download.html
     - 
-----------------------------------------------------------------
+
  ### Creating a Barcode
     Python module 
     -  https://pypi.org/project/python-barcode/ 
@@ -74,21 +70,17 @@ Pulling all the changed code in a branch ( in this case it is the master branch)
     - https://github.com/WhyNotHugo/python-barcode 
     Example code for generating code - but this done randomly not by choice
       - https://www.101computing.net/barcode-generator-using-python/ 
----------------------------------------------------------------
+
 ## PWM
----------------------------------------------------------------
 ### In order to make a pwm with python code
     - https://pythonhosted.org/RPIO/pwm_py.html  
 
-------------------------------------------------------------
 ## Modules
-------------------------------------------------------------
 ### Processing module
     - example code for processing module
     - http://interactivepython.org/runestone/static/everyday/2013/05/1_processing.html
     
-------------------------------------------------
+
 ## Sending Emails
----------------------------------------------------
 ### This website has the code tha actually works
   - https://realpython.com/python-send-email/
