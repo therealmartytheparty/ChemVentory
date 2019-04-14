@@ -14,9 +14,10 @@ if __name__ == "__main__":
     list = listloader()
     size = len(list)
 
+    print(list)
+
+
     ui.setupUi(MainWin, size, list)
     MainWin.show()
-
-
 
     sys.exit(app.exec_())

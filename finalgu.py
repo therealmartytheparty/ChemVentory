@@ -340,8 +340,6 @@ class Ui_MainWindow(object):
         #take text from text bar in and erase text field
         searchstr = self.Searchbar1.text()
 
-        print(searchList(list))
-
     def checkoutButtonclicked(self):
         print("check out")
 

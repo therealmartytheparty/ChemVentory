@@ -17,7 +17,7 @@ class list:
         for x in range(1, len(chemList)):
             if self.name == chemList[x].name:
                 del chemList[x]
-                
+
         for position in range(len(chemList)):     # by index
             print(chemList[position].name)
 
@@ -33,4 +33,4 @@ class list:
         for x in range(1, len(chemList)):
             if self.name == chemList[x].name:
 
-                print(chemList[x].name)
+                return chemList[x].name

@@ -8,14 +8,14 @@ def decimalToBinary(x):
     binaryNumber=bin(x)[2:]
     return (4-len(binaryNumber)) * "0" + binaryNumber
 
-def drawBarCode(height): 
+def drawBarCode(height):
     #Generates a 13-digit bar code.
     marginLeft=30
     marginTop=40
-    for i in range(1,14):  
+    for i in range(1,14):
         digit=randint(0,9)
         nibble=decimalToBinary(digit)
-        for j in range(0,4):  
+        for j in range(0,4):
             if nibble[j:j+1]=="1":
                 fill(0,0,0)
                 stroke(0,0,0)
@@ -23,13 +23,13 @@ def drawBarCode(height):
                 fill(255,255,255)
                 stroke(255,255,255)
             rect(marginLeft+i*8+2*j, marginTop, 2, height)
-        
+
         #Display the digit in Decimal
         fill(0,0,0)
         stroke(0,0,0)
         #textSize(10)
         text(digit,marginLeft+i*8,marginTop+20+height)
-                
+
 
 def setup():
     strokeWeight(12)
@@ -38,5 +38,5 @@ def setup():
     fill(0,0,0)
     stroke(0,0,0)
     drawBarCode(80)
-    
+
 run()
