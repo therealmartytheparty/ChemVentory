@@ -63,13 +63,14 @@ Pulling all the changed code in a branch ( in this case it is the master branch)
     - http://zbar.sourceforge.net/download.html 
 
  ### Creating a Barcode
+ '''
     Python module 
     -  https://pypi.org/project/python-barcode/ 
     GIT for creating barcodes using python and making svg objects 
     - https://github.com/WhyNotHugo/python-barcode 
     Example code for generating code - but this done randomly not by choice
       - https://www.101computing.net/barcode-generator-using-python/ 
-
+'''
 ## PWM
 ### In order to make a pwm with python code
     - https://pythonhosted.org/RPIO/pwm_py.html  
