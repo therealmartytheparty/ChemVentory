@@ -3,7 +3,7 @@ Programming research and things that will be implemented in the final code
 --------------------------------------------------------------
 ## How To Use Github
 ---------------------------------------------------------------
-## commands that are mostly going to be used
+## Github Commands
 Cloning a directory into a new folder->  git clone https://github.com/therealmartytheparty/ChemVentory
 
 Adding everything into the staging are -> git add .   
@@ -16,7 +16,6 @@ Commiting code along with adding a message related to the commit ( dont need but
 
 Pulling all the changed code in a branch ( in this case it is the master branch) -> git pull origin master
 --------------------------------------------------------------
-URLS
   
 ### Github cheat sheet
 - https://github.github.com/training-kit/downloads/github-git-cheat-sheet.pdf 
