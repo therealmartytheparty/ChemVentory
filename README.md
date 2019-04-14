@@ -4,29 +4,17 @@ Programming research and things that will be implemented in the final code
 ## How To Use Github
 ---------------------------------------------------------------
 ## commands that are mostly going to be used
-###Cloning a directory into a new folder
+Cloning a directory into a new folder->  git clone https://github.com/therealmartytheparty/ChemVentory
 
-- git clone https://github.com/therealmartytheparty/ChemVentory
+Adding everything into the staging are -> git add .   
 
-### Adding everything into the staging area
-
-- git add .   
-
-### adding a certain file into the staging area
-
-- git add "insertfile"
+Adding a certain file into the staging area -> git add "insertfile"
   
-### for commiting all code that has been added to the staging area
+Commiting all code that has been added to the staging area -> git commit -a
 
-- git commit -a
+Commiting code along with adding a message related to the commit ( dont need but could be helpful) -> git commit -am "message"
 
-### for commiting code along with adding a message related to the commit ( dont need but could be helpful)
-
-- git commit -am "message"
-
-### for pulling all the changed code in a branch ( in this case it is the master branch)
-
-- git pull origin master
+Pulling all the changed code in a branch ( in this case it is the master branch) -> git pull origin master
 --------------------------------------------------------------
 URLS
   
