@@ -1,30 +1,23 @@
-# ===========>>ChemVentory<<=============
-Programming research and things that will be implemented in the final code
---------------------------------------------------------------
+# ChemVentory
+Programming research and code that was used to create the code 
+for ChemVentory Chemical Storage System
+
+
 ## How To Use Github
----------------------------------------------------------------
-### commands that are mostly going to be used
-*for cloning this directory
 
-- git clone https://github.com/therealmartytheparty/ChemVentory
+### Github Commands
+Cloning a directory into a new folder->  git clone https://github.com/therealmartytheparty/ChemVentory
 
-*for adding everything into the staging area
+Adding everything into the staging are -> git add .   
 
-- git add .   
-
-*for adding a certain file into the staging area
-
-- git add "insertfile"
+Adding a certain file into the staging area -> git add "insertfile"
   
-*for commiting all code that has been added to the staging area
+Commiting all code that has been added to the staging area -> git commit -a
 
-- git commit -a
+Commiting code along with adding a message related to the commit ( dont need but could be helpful) -> git commit -am "message"
 
-*for commiting code along with adding a message related to the commit ( dont need but could be helpful)
+Pulling all the changed code in a branch ( in this case it is the master branch) -> git pull origin master
 
-- git commit -am "message"
---------------------------------------------------------------
-URLS
   
 ### Github cheat sheet
 - https://github.github.com/training-kit/downloads/github-git-cheat-sheet.pdf 
@@ -41,9 +34,9 @@ URLS
 ### How to make a great Readme for a git
 - https://gist.github.com/PurpleBooth/109311bb0361f32d87a2
 - https://gist.githubusercontent.com/PurpleBooth/109311bb0361f32d87a2/raw/8254b53ab8dcb18afc64287aaddd9e5b6059f880/README-Template.md
---------------------------------------------------------------
+
+
 ## LEDS control
---------------------------------------------------------------
 ### LED programming/Shift Register
   Info
     Instructible for 3d led block that goes into talking about shift registers
@@ -54,41 +47,40 @@ URLS
         Goes into the python code for driving the SN74HC595 chip
         -https://www.sunfounder.com/learn/super_kit_v2_for_raspberrypi/lesson-10-driving-leds-by-74hc595-super-kit-for-raspberrypi.html 
       
--------------------------------------------------------------
 ## GPIO pins
---------------------------------------------------------------
 ### GPIO pins programming - how to make code for the python code
   Lynda Tutorial
     - https://www.lynda.com/Scratch-tutorials/Raspberry-Pi-GPIO-Depth/473324-2.html
     
---------------------------------------------------------------
+
 ## BARCODES
----------------------------------------------------------------
 ### Reading a Barcode
     Python module
     - https://pypi.org/project/zbar/ 
     important info for barcode reading and scanning
     - https://www.learnopencv.com/barcode-and-qr-code-scanner-using-zbar-and-opencv/
     other stuff
-    - http://zbar.sourceforge.net/download.html
-    - 
-----------------------------------------------------------------
+    - http://zbar.sourceforge.net/download.html 
+
  ### Creating a Barcode
+ '''
     Python module 
     -  https://pypi.org/project/python-barcode/ 
     GIT for creating barcodes using python and making svg objects 
     - https://github.com/WhyNotHugo/python-barcode 
     Example code for generating code - but this done randomly not by choice
       - https://www.101computing.net/barcode-generator-using-python/ 
----------------------------------------------------------------
+'''
 ## PWM
----------------------------------------------------------------
 ### In order to make a pwm with python code
     - https://pythonhosted.org/RPIO/pwm_py.html  
 
-------------------------------------------------------------
 ## Modules
-------------------------------------------------------------
 ### Processing module
     - example code for processing module
     - http://interactivepython.org/runestone/static/everyday/2013/05/1_processing.html
+    
+
+## Sending Emails
+### This website has the code tha actually works
+  - https://realpython.com/python-send-email/
