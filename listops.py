@@ -1,7 +1,7 @@
 import json
 from chemical_class import *
 from list_class import *
-from GUI.finalgu import *
+from finalgu import *
 
 def file_out(chem):
     # increments the chemical list size file
@@ -27,7 +27,6 @@ def file_out(chem):
     with open("Chemicals/" + temp, 'w') as outfile:
         json.dump(data, outfile)
     outfile.close()
-
 
 def file_in(size):
     #opens existing file to fill out chemical object
@@ -67,3 +66,24 @@ def listloader():
         index += 1
         size -= 1
     return array
+
+def addToList(chemList, chemnew):
+    if len(chemList) < 96:
+        chemList.append(chemnew)
+
+    else:
+        print ('The chemical list is full')
+
+
+def removeFromList(chemList, chemrm):
+    for x in range(1, len(chemList)):
+        if chemList[x].name == chemrm.name:
+            del chemList[x]
+
+def sortList(chemList):
+    chemList.sort(key=lambda x: x.name)
+
+def searchList(chemlist, chemstring):
+    for x in range(0, len(chemlist)):
+        if chemlist[x].name == chemstring:
+            return chemlist[x]

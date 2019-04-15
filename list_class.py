@@ -1,6 +1,6 @@
 from chemical_class import *
 
-class list:
+class listcl:
 
     def addToList(self, chemList):
         if len(chemList) < 96:
@@ -10,7 +10,7 @@ class list:
                 print(chemList[position].name)
 
         else:
-            print ('The chemical list if full')
+            print ('The chemical list is full')
 
 
     def removeFromList(self, chemList):
@@ -29,8 +29,8 @@ class list:
             print(chemList[position].name)
 
 
-    def searchList(self, chemList):
-        for x in range(1, len(chemList)):
-            if self.name == chemList[x].name:
+    def searchList(self, chemstring):
+        for x in range(1, len(self)):
+            if self.name == chemstring:
 
-                return chemList[x].name
+                return self.name

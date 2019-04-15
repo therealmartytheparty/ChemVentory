@@ -9,8 +9,8 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtCore import pyqtSignal
 from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QPushButton, QLabel, QLineEdit
-
-
+from functools import partial
+from listops import *
 
 class Ui_MainWindow(object):
 
@@ -95,12 +95,13 @@ class Ui_MainWindow(object):
         self.listWidget.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.listWidget.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOn)
         self.listWidget.setIconSize(QtCore.QSize(10, 10))
-        self.listWidget.setMovement(QtWidgets.QListView.Free)
+        self.listWidget.setMovement(QtWidgets.QListView.Static)
         self.listWidget.setGridSize(QtCore.QSize(10, 20))
         self.listWidget.setModelColumn(0)
         self.listWidget.setUniformItemSizes(True)
         self.listWidget.setItemAlignment(QtCore.Qt.AlignLeading)
         self.listWidget.setObjectName("listWidget")
+        self.listWidget.itemClicked.connect(self.loadchemtotextedit)
         self.verticalLayout_2.addWidget(self.listWidget)
         self.horizontalLayout_4.addWidget(self.frame_2)
         self.verticalLayout = QtWidgets.QVBoxLayout()
@@ -123,7 +124,7 @@ class Ui_MainWindow(object):
         self.searchButton.setToolTip("")
         self.searchButton.setIconSize(QtCore.QSize(20, 20))
         self.searchButton.setObjectName("searchButton")
-        self.searchButton.clicked.connect(self.searchButtonclicked(list))
+        self.searchButton.clicked.connect(partial(self.searchButtonclicked,list))
         self.horizontalLayout.addWidget(self.searchButton)
         self.checkoutButton = QtWidgets.QPushButton(self.frame)
         self.checkoutButton.setMinimumSize(QtCore.QSize(50, 50))
@@ -149,9 +150,9 @@ class Ui_MainWindow(object):
         self.verticalLayout.addLayout(self.horizontalLayout_3)
         self.gridLayout_3 = QtWidgets.QGridLayout()
         self.gridLayout_3.setObjectName("gridLayout_3")
-        self.textBrowser = QtWidgets.QTextBrowser(self.frame)
-        self.textBrowser.setObjectName("textBrowser")
-        self.gridLayout_3.addWidget(self.textBrowser, 0, 0, 1, 1)
+        self.TextEdit = QtWidgets.QTextEdit(self.frame)
+        self.TextEdit.setObjectName("TextEdit")
+        self.gridLayout_3.addWidget(self.TextEdit, 0, 0, 1, 1)
         self.verticalLayout.addLayout(self.gridLayout_3)
         self.horizontalLayout_5 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_5.setContentsMargins(0, 0, 0, 0)
@@ -328,7 +329,7 @@ class Ui_MainWindow(object):
         self.chemtabs.setTabText(self.chemtabs.indexOf(self.EditChem), _translate("MainWindow", "Edit Entries"))
 
     def appendlist(self, size, list):
-
+        # fills out the list with all the chemicals
         for i in range(size):
             item = QtWidgets.QListWidgetItem()
             self.listWidget.setCurrentRow(i)
@@ -336,9 +337,30 @@ class Ui_MainWindow(object):
             item = self.listWidget.item(i)
             item.setText(list[i].name)
 
-    def searchButtonclicked(self, list):
+    def loadchemtotextedit(self,item):
+        print(item, str(item.text()))
+
+    def searchButtonclicked(self, list1):
         #take text from text bar in and erase text field
         searchstr = self.Searchbar1.text()
+
+        # the found chemical object
+        foundchem = searchList(list1,searchstr)
+
+        chemfile = open("tempfile.txt", 'w')
+
+        chemfile.write("Chemical Name:" + foundchem.name + "\n \n")
+        chemfile.write("Chemical Formula:" + foundchem.formula + "\n \n")
+        chemfile.write("Chemical Supplier:" + foundchem.supplier + "\n \n")
+        chemfile.write("Chemical Initial Mass:" + str(foundchem.massI) + "\n \n")
+        chemfile.write("Chemical Last Mass:" + str(foundchem.massUpdate) + "\n \n")
+        chemfile.write("Chemical age:" + str(foundchem.age) + "\n \n")
+        chemfile.write("Barcode Number:" + str(foundchem.barC) + "\n")
+
+        chemfile.close()
+
+        text = open('tempfile.txt').read()
+        self.TextEdit.setPlainText(text)
 
     def checkoutButtonclicked(self):
         print("check out")

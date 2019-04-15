@@ -1,7 +1,7 @@
 from list_class import *
 from chemical_class import *
-from GUI.finalgu import *
-from listwidgetops import *
+from finalgu import *
+from listops import *
 import sys
 from PyQt5 import QtGui, uic
 
@@ -11,13 +11,14 @@ if __name__ == "__main__":
     MainWin = QtWidgets.QMainWindow()
     ui = Ui_MainWindow()
 
-    list = listloader()
-    size = len(list)
+    listthing = listloader()
+    size = len(listthing)
 
-    print(list)
+    print(listthing[0].getname())
 
+    searchList(listthing, "Chemical 1")
 
-    ui.setupUi(MainWin, size, list)
+    ui.setupUi(MainWin, size, listthing)
     MainWin.show()
 
     sys.exit(app.exec_())

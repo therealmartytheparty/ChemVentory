@@ -25,6 +25,9 @@ class Chemical:
     def setname(self,name):
         self.name = name
 
+    def getname(self):
+        return self.name
+
     def setformula(self,formula):
         self.formula = formula
 
@@ -43,4 +46,3 @@ class Chemical:
 
     def setage(self,age):
         self.age = age
-

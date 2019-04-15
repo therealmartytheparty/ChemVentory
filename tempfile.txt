@@ -1,0 +1,13 @@
+Chemical Name:Chemical 1
+ 
+Chemical Formula:CF1
+ 
+Chemical Supplier:Company1
+ 
+Chemical Initial Mass:600
+ 
+Chemical Last Mass:500
+ 
+Chemical age:100
+ 
+Barcode Number:1
