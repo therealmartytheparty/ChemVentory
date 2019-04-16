@@ -24,5 +24,6 @@ while True:
     y = 0b00110010
     x = 0b00100100
     print(y)
+    p
     shiftout(y)
     time.sleep(100)

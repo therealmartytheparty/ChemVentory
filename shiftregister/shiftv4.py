@@ -7,9 +7,9 @@ data1 = 4
 latch1 = 5
 clock1 = 6
 #for the second shift register
-data2 = 17
-latch2 = 22
-clock2 = 27
+data2 = 23
+latch2 = 24
+clock2 = 25
 
 GPIO.setwarnings(False)
 
@@ -31,15 +31,15 @@ def shiftout1(byte1):
 def shiftout2(byte2):
     GPIO.output(latch2,0)
     for x in range(8):
-        GPIO.output(data2, 0x80 & (byte2 << x))
+        GPIO.output(data2, 0x80 & (byte2 << 8))
         GPIO.output(clock2,1)
         GPIO.output(clock2,0)
     GPIO.output(clock2,1)
 
 #for x in range(255):
 while True:
-    y = 2
-    x = 256
+    y = 64
+    x = 0b01111111
     print(y)
     shiftout1(y)
     shiftout2(x)

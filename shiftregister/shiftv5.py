@@ -59,7 +59,7 @@ def shiftout3(byte3):
         GPIO.output(clock3,0)
     GPIO.output(latch3,1)
 #for the fourth shift register
-def shiftout2(byte4):
+def shiftout4(byte4):
     GPIO.output(latch4,0)
     for x in range(8):
         GPIO.output(data4, 0x80 & (byte4 << x))
@@ -75,5 +75,5 @@ while True:
     shiftout1(y)
     shiftout2(x)
     shiftout3(x)
-    hisftout4(x)
+    shiftout4(x)
     time.sleep(100)
