@@ -1,1 +1,1 @@
-{"chem": [{"barC": 3, "name": "Chemical 3", "formula": "CF3", "supplier": "Company3", "massI": 400, "massUpdate": 300, "age": 300}]}
+{"chem": [{"barC": 3, "name": "Chemical 3", "formula": "CF3", "supplier": "Company3", "massI": 400, "massUpdate": 300, "age": 300, "insys": 1}]}

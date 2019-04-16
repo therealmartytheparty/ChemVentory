@@ -7,7 +7,7 @@ class Chemical:
 
     num_of_Chems = 0
 
-    def __init__(self, name=None, formula=None, supplier=None, massI=None, massUpdate=None, age=None):
+    def __init__(self, name=None, formula=None, supplier=None, massI=None, massUpdate=None, age=None, inout = None):
         if name != None:
             self.barC = Chemical.num_of_Chems + 1
             self.formula = formula
@@ -16,6 +16,7 @@ class Chemical:
             self.massI = massI
             self.massUpdate = massUpdate
             self.age = age
+            self.insys = inout
 
         Chemical.num_of_Chems += 1
 
@@ -43,6 +44,8 @@ class Chemical:
         dateExpire = datetime.datetime.now() + timedelta(days = 365)
         #chemLocation
 
-
     def setage(self,age):
         self.age = age
+
+    def setinsys(self, inout):
+        self.insys = inout

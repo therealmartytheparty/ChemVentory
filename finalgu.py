@@ -101,7 +101,7 @@ class Ui_MainWindow(object):
         self.listWidget.setUniformItemSizes(True)
         self.listWidget.setItemAlignment(QtCore.Qt.AlignLeading)
         self.listWidget.setObjectName("listWidget")
-        self.listWidget.itemClicked.connect(self.loadchemtotextedit)
+        self.listWidget.itemClicked.connect(partial(self.loadchemtotextedit, list))
         self.verticalLayout_2.addWidget(self.listWidget)
         self.horizontalLayout_4.addWidget(self.frame_2)
         self.verticalLayout = QtWidgets.QVBoxLayout()
@@ -161,7 +161,7 @@ class Ui_MainWindow(object):
         self.deleteButton = QtWidgets.QPushButton(self.frame)
         self.deleteButton.setMinimumSize(QtCore.QSize(0, 50))
         self.deleteButton.setObjectName("deleteButton")
-        self.deleteButton.clicked.connect(self.deleteButtonclicked)
+        self.deleteButton.clicked.connect(partial(self.deleteButtonclicked,list))
         self.horizontalLayout_5.addWidget(self.deleteButton)
         self.verticalLayout.addLayout(self.horizontalLayout_5)
         self.horizontalLayout_4.addLayout(self.verticalLayout)
@@ -337,8 +337,29 @@ class Ui_MainWindow(object):
             item = self.listWidget.item(i)
             item.setText(list[i].name)
 
-    def loadchemtotextedit(self,item):
-        print(item, str(item.text()))
+    def loadchemtotextedit(self, list1, item):
+
+        # the found chemical object
+        foundchem = searchList(list1,str(item.text()))
+
+        chemfile = open("tempfile.txt", 'w')
+
+        chemfile.write("Chemical Name: " + foundchem.name + "\n \n")
+        chemfile.write("Chemical Formula: " + foundchem.formula + "\n \n")
+        chemfile.write("Chemical Supplier: " + foundchem.supplier + "\n \n")
+        chemfile.write("Chemical Initial Mass: " + str(foundchem.massI) + "\n \n")
+        chemfile.write("Chemical Last Mass: " + str(foundchem.massUpdate) + "\n \n")
+        chemfile.write("Chemical age: " + str(foundchem.age) + "\n \n")
+        chemfile.write("Barcode Number: " + str(foundchem.barC) + "\n \n")
+        if foundchem.insys == 1:
+            chemfile.write("Check in/out status: " + "Checked in" + "\n")
+        else:
+            chemfile.write("Check in/out status: " + "Checked out" + "\n")
+
+        chemfile.close()
+
+        text = open('tempfile.txt').read()
+        self.TextEdit.setPlainText(text)
 
     def searchButtonclicked(self, list1):
         #take text from text bar in and erase text field
@@ -349,30 +370,55 @@ class Ui_MainWindow(object):
 
         chemfile = open("tempfile.txt", 'w')
 
-        chemfile.write("Chemical Name:" + foundchem.name + "\n \n")
-        chemfile.write("Chemical Formula:" + foundchem.formula + "\n \n")
-        chemfile.write("Chemical Supplier:" + foundchem.supplier + "\n \n")
-        chemfile.write("Chemical Initial Mass:" + str(foundchem.massI) + "\n \n")
-        chemfile.write("Chemical Last Mass:" + str(foundchem.massUpdate) + "\n \n")
-        chemfile.write("Chemical age:" + str(foundchem.age) + "\n \n")
-        chemfile.write("Barcode Number:" + str(foundchem.barC) + "\n")
+        chemfile.write("Chemical Name: " + foundchem.name + "\n \n")
+        chemfile.write("Chemical Formula: " + foundchem.formula + "\n \n")
+        chemfile.write("Chemical Supplier: " + foundchem.supplier + "\n \n")
+        chemfile.write("Chemical Initial Mass: " + str(foundchem.massI) + "\n \n")
+        chemfile.write("Chemical Last Mass: " + str(foundchem.massUpdate) + "\n \n")
+        chemfile.write("Chemical age: " + str(foundchem.age) + "\n \n")
+        chemfile.write("Barcode Number: " + str(foundchem.barC) + "\n \n")
+        if foundchem.insys == 1:
+            chemfile.write("Check in/out status: " + "Checked in" + "\n")
+        else:
+            chemfile.write("Check in/out status: " + "Checked out" + "\n")
 
         chemfile.close()
 
         text = open('tempfile.txt').read()
         self.TextEdit.setPlainText(text)
 
-    def checkoutButtonclicked(self):
-        print("check out")
+    def checkoutButtonclicked(self, list1):
+        searchstr = self.Searchbar1.text()
 
-    def checkinButtonclicked(self):
-        print("Check in")
+        foundchem = searchList(list1,searchstr)
+
+        # light LED
+        # make user weigh it and record weight
+
+        foundchem.setinsys(0)
+
+    def checkinButtonclicked(self, list1):
+        searchstr = self.Searchbar1.text()
+
+        foundchem = searchList(list1,searchstr)
+
+        # make user weigh it and record weight
+        # light LED
+
+        foundchem.setinsys(1)
 
     def outputfileButtonclicked(self):
         print("output file")
 
-    def deleteButtonclicked(self):
-        print("delete")
+    def deleteButtonclicked(self, list1):
+        searchstr = self.Searchbar1.text()
+
+
+        foundchem = searchList(list1,searchstr)
+
+        removeFromList(list1,foundchem)
+
+
 
     def saveButtonclicked(self):
         print("save")

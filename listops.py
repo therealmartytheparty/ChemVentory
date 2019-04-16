@@ -20,7 +20,8 @@ def file_out(chem):
         'supplier': chem.supplier,
         'massI': chem.massI,
         'massUpdate': chem.massUpdate,
-        'age': chem.age
+        'age': chem.age,
+        'insys': chem.insys
     })
 
     # dumps the data into the file that was opened
@@ -42,6 +43,7 @@ def file_in(size):
             tempchem.setmassI(p['massI'])
             tempchem.setmassUpdate(p['massUpdate'])
             tempchem.setage(p['age'])
+            tempchem.setinsys(p['insys'])
     json_file.close
     return tempchem
 

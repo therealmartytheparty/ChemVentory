@@ -1,13 +1,15 @@
-Chemical Name:Chemical 1
+Chemical Name: Chemical 5
  
-Chemical Formula:CF1
+Chemical Formula: CF5
  
-Chemical Supplier:Company1
+Chemical Supplier: Company5
  
-Chemical Initial Mass:600
+Chemical Initial Mass: 200
  
-Chemical Last Mass:500
+Chemical Last Mass: 100
  
-Chemical age:100
+Chemical age: 500
  
-Barcode Number:1
+Barcode Number: 5
+ 
+Check in/out status: Checked in

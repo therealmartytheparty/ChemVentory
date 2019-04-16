@@ -14,10 +14,6 @@ if __name__ == "__main__":
     listthing = listloader()
     size = len(listthing)
 
-    print(listthing[0].getname())
-
-    searchList(listthing, "Chemical 1")
-
     ui.setupUi(MainWin, size, listthing)
     MainWin.show()
 
