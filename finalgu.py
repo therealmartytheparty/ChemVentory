@@ -11,6 +11,7 @@ from PyQt5.QtCore import pyqtSignal
 from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QPushButton, QLabel, QLineEdit
 from functools import partial
 from listops import *
+from testSubject import *
 
 class Ui_MainWindow(object):
 
@@ -365,27 +366,51 @@ class Ui_MainWindow(object):
         #take text from text bar in and erase text field
         searchstr = self.Searchbar1.text()
 
-        # the found chemical object
-        foundchem = searchList(list1,searchstr)
+        if searchstr == "AARON":
+            inherit = testSubject()
 
-        chemfile = open("tempfile.txt", 'w')
+            chemfile = open("tempfile.txt", 'w')
 
-        chemfile.write("Chemical Name: " + foundchem.name + "\n \n")
-        chemfile.write("Chemical Formula: " + foundchem.formula + "\n \n")
-        chemfile.write("Chemical Supplier: " + foundchem.supplier + "\n \n")
-        chemfile.write("Chemical Initial Mass: " + str(foundchem.massI) + "\n \n")
-        chemfile.write("Chemical Last Mass: " + str(foundchem.massUpdate) + "\n \n")
-        chemfile.write("Chemical age: " + str(foundchem.age) + "\n \n")
-        chemfile.write("Barcode Number: " + str(foundchem.barC) + "\n \n")
-        if foundchem.insys == 1:
-            chemfile.write("Check in/out status: " + "Checked in" + "\n")
+            chemfile.write("Chemical Name: " + inherit.name + "\n \n")
+            chemfile.write("Chemical Formula: " + inherit.formula + "\n \n")
+            chemfile.write("Chemical Supplier: " + inherit.supplier + "\n \n")
+            chemfile.write("Chemical Initial Mass: " + str(inherit.massI) + "\n \n")
+            chemfile.write("Chemical Last Mass: " + str(inherit.massUpdate) + "\n \n")
+            chemfile.write("Chemical age: " + str(inherit.age) + "\n \n")
+            chemfile.write("Barcode Number: " + str(inherit.barC) + "\n \n")
+            if inherit.insys == 1:
+                chemfile.write("Check in/out status: " + "Checked in" + "\n \n")
+            else:
+                chemfile.write("Check in/out status: " + "Checked out" + "\n \n")
+
+            chemfile.write("Purpose: " + inherit.purpose + "\n")
+
+            chemfile.close()
+
+            text = open('tempfile.txt').read()
+            self.TextEdit.setPlainText(text)
         else:
-            chemfile.write("Check in/out status: " + "Checked out" + "\n")
+            # the found chemical object
+            foundchem = searchList(list1,searchstr)
 
-        chemfile.close()
+            chemfile = open("tempfile.txt", 'w')
 
-        text = open('tempfile.txt').read()
-        self.TextEdit.setPlainText(text)
+            chemfile.write("Chemical Name: " + foundchem.name + "\n \n")
+            chemfile.write("Chemical Formula: " + foundchem.formula + "\n \n")
+            chemfile.write("Chemical Supplier: " + foundchem.supplier + "\n \n")
+            chemfile.write("Chemical Initial Mass: " + str(foundchem.massI) + "\n \n")
+            chemfile.write("Chemical Last Mass: " + str(foundchem.massUpdate) + "\n \n")
+            chemfile.write("Chemical age: " + str(foundchem.age) + "\n \n")
+            chemfile.write("Barcode Number: " + str(foundchem.barC) + "\n \n")
+            if foundchem.insys == 1:
+                chemfile.write("Check in/out status: " + "Checked in" + "\n")
+            else:
+                chemfile.write("Check in/out status: " + "Checked out" + "\n")
+
+            chemfile.close()
+
+            text = open('tempfile.txt').read()
+            self.TextEdit.setPlainText(text)
 
     def checkoutButtonclicked(self, list1):
         searchstr = self.Searchbar1.text()

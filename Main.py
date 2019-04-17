@@ -1,4 +1,3 @@
-from list_class import *
 from chemical_class import *
 from finalgu import *
 from listops import *

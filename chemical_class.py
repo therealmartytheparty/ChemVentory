@@ -1,4 +1,3 @@
-
 import json
 import datetime
 from datetime import timedelta
@@ -9,14 +8,17 @@ class Chemical:
 
     def __init__(self, name=None, formula=None, supplier=None, massI=None, massUpdate=None, age=None, inout = None):
         if name != None:
-            self.barC = Chemical.num_of_Chems + 1
-            self.formula = formula
             self.name = name
-            self.supplier = supplier
-            self.massI = massI
-            self.massUpdate = massUpdate
-            self.age = age
-            self.insys = inout
+
+            if formula != None:
+                self.formula = formula
+                self.supplier = supplier
+                self.massI = massI
+                self.massUpdate = massUpdate
+                self.age = age
+                self.insys = inout
+                self.barC = Chemical.num_of_Chems + 1
+
 
         Chemical.num_of_Chems += 1
 

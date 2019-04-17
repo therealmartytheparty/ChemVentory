@@ -1,6 +1,5 @@
 import json
 from chemical_class import *
-from list_class import *
 from finalgu import *
 
 def file_out(chem):
